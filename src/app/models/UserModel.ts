@@ -3,5 +3,6 @@ export class UserModel {
     username:string;
     password?:string;
     email?:string;
-    fullname?:string;
+    first_name?:string;
+    last_name?:string;
 }

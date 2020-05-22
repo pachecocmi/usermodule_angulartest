@@ -8,6 +8,7 @@ import { HeaderComponent } from './components/layout/header/header.component';
 import { UserComponent } from './components/pages/user/user.component';
 import { UserListComponent } from './components/pages/user-list/user-list.component';
 import { UserFormComponent } from './components/pages/user-form/user-form.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { UserFormComponent } from './components/pages/user-form/user-form.compon
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
