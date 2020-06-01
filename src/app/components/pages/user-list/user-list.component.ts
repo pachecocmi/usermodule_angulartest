@@ -1,5 +1,4 @@
-import { Component, OnInit } from '@angular/core';
-import { UserService } from '../../../services/user-service.service';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { UserModel } from '../../../models/UserModel';
 
 @Component({
@@ -9,14 +8,33 @@ import { UserModel } from '../../../models/UserModel';
 })
 export class UserListComponent implements OnInit {
 
-  userList:UserModel[];
+  @Input() userList:UserModel[];
+  @Output() listEmit = new EventEmitter<any>();
 
-  constructor(private userService:UserService) { }
+  constructor() { }
 
   ngOnInit(): void {
-    this.userService.getUsers().subscribe(users => {
-      this.userList = users['data'];
+  }
+
+  btnEvent(action:string, userID:number) {
+    this.listEmit.emit({
+      method: action,
+      value: userID
     });
   }
+
+  // deleteUser(userId:number) {
+  //   this.listEmit.emit({
+  //     method: "deleteUser",
+  //     value: userId
+  //   });
+  // }
+
+  // showUser(userId:number) {
+  //   this.listEmit.emit({
+  //     method: "showUser",
+  //     value: userId
+  //   });
+  // }
 
 }

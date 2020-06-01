@@ -30,4 +30,8 @@ export class UserService {
   addUser(user: UserModel):Observable<UserModel> {
     return this.http.post<UserModel>(`${url}register`, user, httpOptions);
   }
+  
+  deleteUser(id):Observable<UserModel> {
+    return this.http.post<UserModel>(`${url}delete/${id}`, {}, httpOptions);
+  }
 }

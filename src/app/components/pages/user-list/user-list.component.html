@@ -1,3 +1,10 @@
 <ul *ngFor="let user of userList">
-    <li>{{ user.email }}</li>
+    <li>
+        <p>
+            {{ user.email }}
+            <input type="button" value="Edit/View" (click)="btnEvent('showUser', user.id)">
+            <input type="button" value="X" (click)="btnEvent('deleteUser', user.id)">
+        </p>
+    </li>
+
 </ul>

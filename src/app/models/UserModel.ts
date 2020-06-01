@@ -1,6 +1,6 @@
 export class UserModel {
     id?:number;
-    username:string;
+    username?:string;
     password?:string;
     email?:string;
     first_name?:string;
